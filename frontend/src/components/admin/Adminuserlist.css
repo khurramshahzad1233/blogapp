@@ -1,0 +1,10 @@
+.alladminusercontainer{
+    display: flex;
+    flex-direction: row;
+}
+.alluserdetailblock{
+    width: 80vw;
+}
+.alladminuserheading{
+    padding-top: 60px;
+}

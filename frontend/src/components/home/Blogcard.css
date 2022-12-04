@@ -1,0 +1,13 @@
+.singleblogdiv{
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.homeblogimage{
+    width: 450px;
+}
+.homeblogimage img{
+    width: 100%;
+}

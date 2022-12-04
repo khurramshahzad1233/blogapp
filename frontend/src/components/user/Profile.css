@@ -1,0 +1,33 @@
+.profilecontainer{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.profilecontainer img{
+    width: 157px;
+    height: 207px;
+    border-radius: 43px
+}
+.profilecontainer h2{
+    font-size: 1.5rem;
+
+}
+.profileimagediv{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.profileinfodiv{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}

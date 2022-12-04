@@ -1,0 +1,45 @@
+.loginsignupcontainer{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255, 243, 240);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.loginsignupbox{
+    width: 400px;
+    height: 500px;
+    background-color: white;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.loginsignuptoggle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.togglebtn{
+    width: 50%;
+    height: 5px;
+    background-color: black;
+
+}
+.shifttoneutral{
+    transform: translateX(0%);
+    transition: all 1.1s ease-in-out;
+}
+.shifttoright{
+    transform: translateX(100%);
+    transition: all 1.1s ease-in-out;
+}
+.registerform{
+    transform: translate(-100%);
+}
+.neutralform{
+    transform: translateX(0%);
+
+}
+.shifttoleft{
+    transform: translateX(-100%);
+}

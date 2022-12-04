@@ -1,0 +1,295 @@
+import {createReducer} from "@reduxjs/toolkit"
+
+const allbloginitialstate={
+    allblog:[]
+};
+export const allblogreducer=createReducer(allbloginitialstate,{
+    ALL_BLOG_REQUEST:(state,action)=>{
+        return{
+            loading:true,
+            allblog:[]
+
+        }
+    },
+    ALL_BLOG_SUCCESS:(state,action)=>{
+        return{
+            loading:false,
+            allblog:action.payload.blogs,
+            resultperpage:action.payload.resultperpage,
+            filterblogcount:action.payload.filterblogcount,
+            blogcount:action.payload.blogcount,
+        }
+    },
+    ALL_BLOG_FAIL:(state,action)=>{
+        return{
+            loading:false,
+            error:action.payload,
+            allblog:[]
+        }
+    },
+    CLEAR_ERROR:(state,action)=>{
+        return{
+            ...state,
+            error:null
+        }
+    },
+    default:(state,action)=>{
+        return{
+            state,
+        }
+    }
+
+})
+
+const blogdetailinitialstate={
+    blogdetail:{}
+};
+
+export const blogdetailreducer=createReducer(blogdetailinitialstate,{
+    BLOG_DETAIL_REQUEST:(state,action)=>{
+        return{
+            loading:true,
+            blogdetail:{}
+        }
+    },
+    BLOG_DETAIL_SUCCESS:(state,action)=>{
+        return{
+            loading:false,
+            blogdetail:action.payload.blog,
+            ratings:action.payload.blog.ratings,
+            username:action.payload.blog.user.name,
+            allreview:action.payload.blog.review,
+        }
+    },
+    BLOG_DETAIL_FAIL:(state,action)=>{
+        return{
+            loading:false,
+            blogdetail:{},
+            error:action.payload,
+        }
+    },
+    CLEAR_ERROR:(state,action)=>{
+        return{
+            ...state,
+            error:null,
+        }
+    },
+    default:(state,action)=>{
+        return{
+            state,
+        }
+    }
+});
+
+const createreviewinitialstate={
+    newreview:{}
+};
+export const createreviewreducer=createReducer(createreviewinitialstate,{
+    CREATE_REVIEW_REQUEST:(state,action)=>{
+        return{
+            loading:true,
+            newreview:{}
+        }
+    },
+    CREATE_REVIEW_SUCCESS:(state,action)=>{
+        return{
+            loading:false,
+            newreview:action.payload.success,
+        }
+    },
+    CREATE_REVIEW_FAIL:(state,action)=>{
+        return{
+            loading:false,
+            error:action.payload,
+        }
+    },
+    CREATE_REVIEW_RESET:(state,action)=>{
+        return{
+            loading:false,
+            success:false,
+            ...state,
+        }
+    },
+    CLEAR_ERROR:(state,action)=>{
+        return{
+            ...state,
+            error:null,
+        }
+    },
+    default:(state,action)=>{
+        return{
+            state,
+        }
+    }
+});
+
+const newbloginitialstate={
+    newblog:{}
+};
+
+export const newblogreducer=createReducer(newbloginitialstate,{
+    NEW_BLOG_REQUEST:(state,action)=>{
+        return{
+            loading:true,
+            newblog:{}
+        }
+    },
+    NEW_BLOG_SUCCESS:(state,action)=>{
+        return{
+            loading:false,
+            success:action.payload.success,
+            newblog:action.payload.blog,
+        }
+    },
+    NEW_BLOG_FAIL:(state,action)=>{
+        return{
+            loading:false,
+            error:action.payload,
+            newblog:{}
+        }
+    },
+    NEW_BLOG_RESET:(state,action)=>{
+        return{
+            loading:false,
+            success:false,
+            newblog:{}
+        }
+    },
+    CLEAR_ERROR:(state,action)=>{
+        return{
+            ...state,
+            error:null,
+        }
+    },
+    default:(state,action)=>{
+        return{
+            state,
+        }
+    }
+});
+
+const deletebloginitialstate={
+    deleteblog:{}
+};
+export const deleteblogreducer=createReducer(deletebloginitialstate,{
+    DELETE_BLOG_REQUEST:(state,action)=>{
+        return{
+            loading:true,
+            deleteblog:{}
+        }
+    },
+    DELETE_BLOG_SUCCESS:(state,action)=>{
+        return{
+            loading:false,
+            deleteblog:action.payload.success,
+            isDeleted:true,
+        }
+    },
+    DELETE_BLOG_FAIL:(state,action)=>{
+        return{
+            loading:false,
+            error:action.payload,
+            isDeleted:false,
+        }
+    },
+    DELETE_BLOG_RESET:(state,action)=>{
+        return{
+            loading:false,
+            isDeleted:false,
+        }
+    },
+    CLEAR_ERROR:(state,action)=>{
+        return{
+            ...state,
+            error:null,
+        }
+    },
+    default:(state,action)=>{
+        return{
+            state,
+        }
+    }
+});
+
+const updatebloginitialstate={
+    updateblog:{}
+};
+
+export const updateblogreducer=createReducer(updatebloginitialstate,{
+    UPDATE_BLOG_REQUEST:(state,action)=>{
+        return{
+            loading:true,
+            updateblog:{}
+        }
+    },
+    UPDATE_BLOG_SUCCESS:(state,action)=>{
+        return{
+            loading:false,
+            updateblog:action.payload.success,
+            isUpdated:true,
+        }
+    },
+    UPDATE_BLOG_FAIL:(state,action)=>{
+        return{
+            loading:false,
+            error:action.payload,
+            updateblog:{},
+            isUpdated:false,
+        }
+    },
+    UPDATE_BLOG_RESET:(state,action)=>{
+        return{
+            loading:false,
+            isUpdated:false,
+            updateblog:{}
+        }
+    },
+    CLEAR_ERROR:(state,action)=>{
+        return{
+            ...state,
+            error:null,
+        }
+    },
+    default:(state,action)=>{
+        return{
+            state,
+        }
+    }
+})
+
+const alladminbloginitialstate={
+    allblog:[]
+};
+
+export const alladminblogreducer=createReducer(alladminbloginitialstate,{
+    ADMIN_BLOG_REQUEST:(state,action)=>{
+        return{
+            loading:true,
+            allblog:[]
+        }
+    },
+    ADMIN_BLOG_SUCCESS:(state,action)=>{
+        return{
+            loading:false,
+            allblog:action.payload.allblog,
+        }
+    },
+    ADMIN_BLOG_FAIL:(state,action)=>{
+        return{
+            loading:false,
+            allblog:[],
+            error:action.payload,
+        }
+    },
+    CLEAR_ERROR:(state,action)=>{
+        return{
+            ...state,
+            error:null,
+        }
+    },
+    default:(state,action)=>{
+        return{
+            state,
+        }
+    }
+})

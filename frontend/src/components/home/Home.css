@@ -1,0 +1,41 @@
+.banner{
+    background-image: url("../../images/chuttersnap--gS54SWrHMg-unsplash.jpg");
+    background-size: cover;
+    width: 100v;
+    height: 80vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.blogcatediv{
+   
+}
+.blogcontainer{
+    padding:50px 250px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(400px, 1fr));
+    justify-items: center;
+
+
+    
+}
+.homeblogcategory{
+    width: 250px;
+    position: absolute;
+    /* float: left; */
+    text-align: center;
+    padding-top: 50px;
+
+    
+}
+@media screen and (max-width:768px) {
+    .homeblogcategory{
+        position: initial;
+    }
+    
+}

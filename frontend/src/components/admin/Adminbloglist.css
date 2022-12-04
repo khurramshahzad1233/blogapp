@@ -1,0 +1,13 @@
+.alladminblogcontainer{
+    display: flex;
+    flex-direction: row;
+
+}
+.allbloglistdiv{
+    padding-top: 60px;
+}
+.allblogdetail{
+    height: 100vh;
+    width: 80vw;
+   
+}

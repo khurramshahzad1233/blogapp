@@ -1,0 +1,303 @@
+import {createReducer} from "@reduxjs/toolkit"
+
+const userinitialstate={
+    user:{}
+};
+export const userreducer=createReducer(userinitialstate,{
+    REGISTER_USER_REQUEST:(state,action)=>{
+        return{
+            loading:true,
+            user:{},
+            isAuthenticated:false,
+        }
+    },
+    REGISTER_USER_SUCCESS:(state,action)=>{
+        return{
+            loading:false,
+            user:action.payload.user,
+            isAuthenticated:true,
+        }
+    },
+    REGISTER_USER_FAIL:(state,action)=>{
+        return{
+            loading:false,
+            user:null,
+            error:action.payload,
+            isAuthenticated:false,
+        }
+    },
+    CLEAR_ERROR:(state,action)=>{
+        return{
+            ...state,
+            error:null,
+        }
+    },
+    default:(state,action)=>{
+        return{
+            state,
+        }
+    },
+    LOGIN_USER_REQUEST:(state,action)=>{
+        return{
+            loading:true,
+            user:{},
+            isAuthenticated:false,
+        }
+    },
+    LOGIN_USER_SUCCESS:(state,action)=>{
+        return{
+            loading:false,
+            user:action.payload.user,
+            isAuthenticated:true,
+        }
+    },
+    LOGIN_USER_FAIL:(state,action)=>{
+        return{
+            loading:false,
+            user:{},
+            isAuthenticated:false,
+            error:action.payload,
+        }
+    },
+    LOAD_USER_REQUEST:(state,action)=>{
+        return{
+            loading:true,
+            isAuthenticated:false,
+            user:{}
+        }
+    },
+    LOAD_USER_SUCCESS:(state,action)=>{
+        return{
+            loading:false,
+            user:action.payload.user,
+            isAuthenticated:true,
+        }
+    },
+    LOAD_USER_FAIL:(state,action)=>{
+        return{
+            loading:false,
+            user:{},
+            isAuthenticated:false,
+            error:action.payload,
+        }
+    },
+    LOGOUT_USER_REQUEST:(state,action)=>{
+        return{
+            loading:true,
+            logout:false,
+
+        }
+    },
+    LOGOUT_USER_SUCCESS:(state,action)=>{
+        return{
+            loading:false,
+            logout:action.payload.success,
+            user:null,
+            isAuthenticated:false,
+        }
+    },
+    LOGOUT_USER_FAIL:(state,action)=>{
+        return{
+            loading:false,
+            error:action.payload,
+            ...state,
+        }
+    }
+
+});
+
+const updateprofileinitialstate={
+    updateprofile:{}
+};
+export const updateprofilereducer=createReducer(updateprofileinitialstate,{
+    UPDATE_PROFILE_REQUEST:(state,action)=>{
+        return{
+            ...state,
+            loading:true,
+            isUpdated:false,
+        }
+    },
+    UPDATE_PROFILE_SUCCESS:(state,action)=>{
+        return{
+            loading:false,
+            ...state,
+            isUpdated:action.payload.success,
+
+        }
+    },
+    UPDATE_PROFILE_FAIL:(state,action)=>{
+        return{
+            loading:false,
+            isUpdated:false,
+            error:action.payload,
+        }
+    },
+    UPDATE_PROFILE_RESET:(state,action)=>{
+        return{
+            loading:false,
+            isUpdated:false,
+            
+        }
+    },
+    CLEAR_ERROR:(state,action)=>{
+        return{
+            ...state,
+            error:null,
+        }
+    },
+    default:(state,action)=>{
+        return{
+            state,
+        }
+    },
+    UPDATE_PASSWORD_REQUEST:(state,action)=>{
+        return{
+            loading:true,
+            isUpdated:false,
+            ...state,
+        }
+    },
+    UPDATE_PASSWORD_SUCCESS:(state,action)=>{
+        return{
+            loading:false,
+            isUpdated:action.payload.success,
+            
+        }
+    },
+    UPDATE_PASSWORD_FAIL:(state,action)=>{
+        return{
+            loading:false,
+            isUpdated:false,
+            error:action.payload,
+            
+        }
+    },
+    UPDATE_PASSWORD_RESET:(state,action)=>{
+        return{
+            loading:false,
+            isUpdated:false,
+        }
+    }
+
+})
+
+
+const mybloginitialstate={
+    myblogs:[]
+};
+
+export const myblogreducer=createReducer(mybloginitialstate,{
+    MY_BLOG_REQUEST:(state,action)=>{
+        return{
+            loading:true,
+            myblogs:[]
+        }
+    },
+    MY_BLOG_SUCCESS:(state,action)=>{
+        return{
+            loading:false,
+            myblogs:action.payload.user.blog,
+        }
+    },
+    MY_BLOG_FAIL:(state,action)=>{
+        return{
+            loading:false,
+            error:action.payload,
+            myblogs:[]
+        }
+    },
+    CLEAR_ERROR:(state,action)=>{
+        return{
+            ...state,
+            error:null,
+        }
+    },
+    default:(state,action)=>{
+        return{
+            state,
+        }
+    }
+});
+
+
+const adminuserinitialstate={
+    alluser:[]
+};
+
+export const alladminuserreducer=createReducer(adminuserinitialstate,{
+    ADMIN_USER_REQUEST:(state,action)=>{
+        return{
+            loading:true,
+            alluser:[]
+        }
+    },
+    ADMIN_USER_SUCCESS:(state,action)=>{
+        return{
+            loading:false,
+            alluser:action.payload.alluser,
+        }
+    },
+    ADMIN_USER_FAIL:(state,action)=>{
+        return{
+            loading:false,
+            alluser:[],
+            error:action.payload,
+        }
+    },
+    CLEAR_ERROR:(state,action)=>{
+        return{
+            ...state,
+            error:null,
+        }
+    },
+    default:(state,action)=>{
+        return{
+            state,
+        }
+    }
+});
+
+const adminuserdeleteinitialstate={
+    deleteuser:{}
+};
+
+export const deleteuserreducer=createReducer(adminuserdeleteinitialstate,{
+    DELETE_USER_REQUEST:(state,action)=>{
+        return{
+            loading:true,
+            deleteuser:{}
+        }
+    },
+    DELETE_USER_SUCCESS:(state,action)=>{
+        return{
+            loading:false,
+            deleteuser:action.payload.success,
+            isDeleted:true,
+        }
+    },
+    DELETE_USER_FAIL:(state,action)=>{
+        return{
+            loading:false,
+            error:action.payload,
+            isDeleted:false,
+        }
+    },
+    DELETE_USER_RESET:(state,action)=>{
+        return{
+            loading:false,
+            isDeleted:false,
+            ...state,
+        }
+    },
+    CLEAR_ERROR:(state,action)=>{
+        return{
+            ...state,
+            error:null,
+        }
+    },
+    default:(state,action)=>{
+        return{
+            state,
+        }
+    }
+})
